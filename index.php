@@ -3,7 +3,7 @@
 require_once( 'controller/homeController.php' );
 require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
-require_once( 'controller/mediaController.php' );
+require_once('controller/mediaController.php');
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -22,7 +22,8 @@ if ( isset( $_GET['action'] ) ):
 
     case 'signup':
 
-      signupPage();
+      if ( !empty($_POST ) ) signup( $_POST );
+      else signupPage();
 
     break;
 

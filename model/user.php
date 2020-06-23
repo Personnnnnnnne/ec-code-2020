@@ -60,12 +60,15 @@ class User {
     return $this->password;
   }
 
+  public function getPasswordConfirm(){
+      return $this->password_confirm;
+  }
+
   /***********************************
   * -------- CREATE NEW USER ---------
   ************************************/
 
   public function createUser() {
-
     // Open database connection
     $db   = init_db();
 

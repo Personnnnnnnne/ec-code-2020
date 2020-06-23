@@ -40,6 +40,16 @@ class Media {
     $this->title = $title;
   }
 
+  public function setType( $type){
+      $this->type = $type;
+  }
+
+  public function setStatus( $status)
+  {
+      $this->status = $status;
+  }
+
+
 
   /***************************
   * -------- GETTERS ---------
@@ -86,7 +96,7 @@ class Media {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM media  ORDER BY release_date DESC" );
+    $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
     $req->execute( array( '%' . $title . '%' ));
 
     // Close databse connection
@@ -95,5 +105,27 @@ class Media {
     return $req->fetchAll();
 
   }
+
+  public static function filmMedia( $title){
+      $db   =init_db();
+
+      $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Film' ORDER BY release_date DESC");
+      $req->execute( array('%'. $title .'%'));
+
+      $db   = null;
+
+      return $req->fetchAll();
+  }
+
+    public static function serieMedia( $title){
+        $db   =init_db();
+
+        $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Série' ORDER BY release_date DESC");
+        $req->execute( array('%'. $title .'%'));
+
+        $db   = null;
+
+        return $req->fetchAll();
+    }
 
 }

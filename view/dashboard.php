@@ -29,7 +29,9 @@
         <!-- Page Content  -->
       <div id="content">
         <div class="header">
-          <h2 class="title">Cod<span>'Flix</span></h2>
+            <h2 class="title">Cod<span>'Flix</span></h2>
+            <button type="button" id="btn-film" value="Films" class="btn btn-primary" onclick=filmMedia()>Films</button>
+            <button type="button" id="btn-serie" value="Séries" class="btn btn-primary" onclick=serieMedia()>Series</button>
             <h2 class="profile"><a href="#">Mon Profile</a></h2>
           <div class="toggle-menu d-block d-md-none">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">

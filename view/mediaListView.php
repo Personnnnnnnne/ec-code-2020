@@ -23,11 +23,12 @@
                 </div>
             </div>
             <div class="title"><?= $media['title']; ?></div>
+            <div class="title"><?= $media['summary']; ?></div>
         </a>
     <?php endforeach; ?>
 </div>
-
-
 <?php $content = ob_get_clean(); ?>
 
 <?php require('dashboard.php'); ?>
+
+
