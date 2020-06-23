@@ -18,6 +18,10 @@ class Media {
     $this->setId( isset( $media->id ) ? $media->id : null );
     $this->setGenreId( $media->genre_id );
     $this->setTitle( $media->title );
+    $this->setType( $media->type);
+    $this->setStatus( $media->status);
+    $this->setReleaseDate( $media->ReleaseDate);
+
   }
 
   /***************************
@@ -36,17 +40,6 @@ class Media {
     $this->title = $title;
   }
 
-  public function setType( $type ) {
-    $this->type = $type;
-  }
-
-  public function setStatus( $status ) {
-    $this->status = $status;
-  }
-
-  public function setReleaseDate( $release_date ) {
-    $this->release_date = $release_date;
-  }
 
   /***************************
   * -------- GETTERS ---------
@@ -93,7 +86,7 @@ class Media {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM media WHERE title = ? ORDER BY release_date DESC" );
+    $req  = $db->prepare( "SELECT * FROM media  ORDER BY release_date DESC" );
     $req->execute( array( '%' . $title . '%' ));
 
     // Close databse connection
