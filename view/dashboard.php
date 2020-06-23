@@ -29,6 +29,7 @@
       <div id="content">
         <div class="header">
           <h2 class="title">Cod<span>'Flix</span></h2>
+            <h2 class="profile">Mon Profile</h2>
           <div class="toggle-menu d-block d-md-none">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fas fa-bars"></i>
