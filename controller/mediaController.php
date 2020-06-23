@@ -14,3 +14,14 @@ function mediaPage() {
   require('view/mediaListView.php');
 
 }
+
+function detailPage( $id ){
+
+    $medias = Media::filmMedia( $id );
+    require('view/mediaListView.php');
+
+
+
+}
+
+

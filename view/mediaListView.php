@@ -23,7 +23,6 @@
                 </div>
             </div>
             <div class="title"><?= $media['title']; ?></div>
-            <div class="title"><?= $media['summary']; ?></div>
         </a>
     <?php endforeach; ?>
 </div>
