@@ -14,18 +14,20 @@ function profileUserPage (){
 
 function changePasswordProfileUser(){
 
-    $medias = profileUser::changePassword();
+    profileUser::changePassword();
     require('view/profileUserView.php');
 }
 
 function changeEmailProfileUser(){
 
-    $medias = profileUser::changeEmail();
+    profileUser::changeEmail();
     require('view/profileUserView.php');
 }
 
 function deleteProfileUser(){
 
-    $medias = profileUser::deleteAccount();
-    require('view/profileUserView.php');
+    profileUser::deleteAccount();
+    $_SESSION = array();
+    session_destroy();
+    header( 'location: index.php' );
 }

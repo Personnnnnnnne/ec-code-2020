@@ -75,11 +75,11 @@ class profileUser
      * ---- DELETE ACCOUNT -----
      ***************************/
 
-    public static function deleteAccount(){
+    public static function deleteAccount($id){
 
         $db   =init_db();
 
-        $req  =   $db->prepare("DELETE FROM 'user' WHERE id=?");
+        $req  =   $db->prepare("DELETE FROM 'user' WHERE 'user'.'id'=?");
         $req->execute();
 
         $db = null;

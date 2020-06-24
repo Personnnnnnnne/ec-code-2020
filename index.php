@@ -80,6 +80,18 @@ if ( isset( $_GET['action'] ) ):
           seriePage();
           break;
 
+      case'genreactionpage':
+          genreActionPage();
+          break;
+
+      case'genrehorreurpage':
+          genreHorreurPage();
+          break;
+
+      case'genresfpage':
+          genreSfPage();
+          break;
+
   endswitch;
 
 else:

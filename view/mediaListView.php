@@ -3,11 +3,19 @@
 <div class="row">
     <div class="col-md-4 offset-md-8">
         <form method="get">
-            <div class="form-group has-btn">
-                <input type="search" id="search" name="title" value="<?= $search; ?>" class="form-control"
-                       placeholder="Rechercher un film ou une série">
+                <div class="form-group has-btn">
+                    <input type="search" id="search" name="title" value="<?= $search; ?>" class="form-control"
+                           placeholder="Rechercher un film ou une série">
 
-                <button type="submit" class="btn btn-block bg-red">Valider</button>
+                    <button type="submit" class="btn btn-block bg-red">Valider</button>
+
+                </div>
+            <div class="profile">
+                <ul>
+                    <li><a href="index.php?action=genreactionpage">Action</a></li>
+                    <li><a href="index.php?action=genrehorreurpage">Horreur</a></li>
+                    <li><a href="index.php?action=genresfpage">Science-Fiction</a></li>
+                </ul>
             </div>
         </form>
     </div>

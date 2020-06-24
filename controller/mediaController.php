@@ -29,3 +29,25 @@ function seriePage() {
     $medias = media::serieMedia( $search );
     require('view/mediaListView.php');
 }
+
+function genreActionPage(){
+
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::genreActionMedia( $search );
+    require('view/mediaListView.php');
+}
+
+function genreHorreurPage(){
+
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::genreHorreurMedia( $search );
+    require('view/mediaListView.php');
+}
+
+function genreSfPage(){
+
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::genreSfMedia( $search );
+    require('view/mediaListView.php');
+}
+

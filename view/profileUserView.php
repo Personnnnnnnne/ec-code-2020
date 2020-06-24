@@ -33,6 +33,8 @@
 
     <br>
 
+    <h3 class="profile"><a href="index.php?action=deleteaccount">Supprimer mon compte</a></h3>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('dashboard.php'); ?>
