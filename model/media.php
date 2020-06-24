@@ -96,8 +96,8 @@ class media {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
-    $req->execute( array($title));
+      $req  = $db->prepare( "SELECT * FROM media WHERE title LIKE ? ORDER BY release_date DESC" );
+      $req->execute( array( '%' . $title . '%'));
 
     // Close databse connection
     $db   = null;
@@ -107,6 +107,7 @@ class media {
   }
 
   public static function filmMedia( $title){
+
       $db   =init_db();
 
       $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Film' ORDER BY release_date DESC");
@@ -118,6 +119,7 @@ class media {
   }
 
     public static function serieMedia( $title){
+
         $db   =init_db();
 
         $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Série' ORDER BY release_date DESC");

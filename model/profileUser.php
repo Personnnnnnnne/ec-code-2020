@@ -8,6 +8,14 @@ class profileUser
     protected $email;
     protected $password;
 
+    public function __construct( $user = null ) {
+
+        if( $user != null ):
+            $this->setNewEmail( $user->email );
+            $this->setNewPassword( $user->password, isset( $user->password_confirm ) ? $user->password_confirm : false );
+        endif;
+    }
+
     /***************************
      * -------- SETTERS ---------
      ***************************/
@@ -21,9 +29,9 @@ class profileUser
         $this->email = $email;
     }
 
-    public function setNewPassword($password){
+    public function setNewPassword( $password ){
 
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_BCRYPT);
     }
 
     /***************************
@@ -39,16 +47,14 @@ class profileUser
 
     /***************************
      * ---- CHANGE PASSWORD ----
-     **************************
-     * @param $password
-     */
+     **************************/
 
     public static function changePassword($password){
 
         $db   =init_db();
 
-        $req  =   $db->prepare("UPDATE 'user' SET $password= '' WHERE 'user'.'id'=?");
-        $req->execute( array($password->getNewPassword() ) );
+        $req  =   $db->prepare("UPDATE user SET 'password'=$password WHERE 'id'=?");
+        $req->execute( array('password'  => $password));
 
     }
 

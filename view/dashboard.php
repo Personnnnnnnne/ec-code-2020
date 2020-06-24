@@ -18,9 +18,9 @@
         <h2 class="title">Bienvenue</h2>
         <div class="sidebar-menu">
           <ul>
-            <li class="active"><a href="">Médias</a></li>
-              <li><a href="index.php?history">Historique</a></li>
-            <li><a href="index.php?contactus">Nous contacter</a></li>
+            <li class="active"><a href="index.php">Médias</a></li>
+              <li><a href="index.php?action=historydisplay">Historique</a></li>
+            <li><a href="index.php?action=contactus">Nous contacter</a></li>
             <li><a href="index.php?action=logout">Me déconnecter</a></li>
           </ul>
         </div>
@@ -30,9 +30,9 @@
       <div id="content">
         <div class="header">
             <h2 class="title">Cod<span>'Flix</span></h2>
-            <h2 class="profile"><a href="index.php?mediatype=filmpage">Films</a></h2>
-            <h2 class="profile"><a href="index.php?mediatype=seriepage">Séries</a></h2>
-            <h2 class="profile"><a href="index.php?profileuser=profilePage">Mon Profile</a></h2>
+            <h2 class="profile"><a href="index.php?action=filmpage">Films</a></h2>
+            <h2 class="profile"><a href="index.php?action=seriepage">Series</a></h2>
+            <h2 class="profile"><a href="index.php?action=profilepage">Mon Profile</a></h2>
           <div class="toggle-menu d-block d-md-none">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fas fa-bars"></i>

@@ -8,7 +8,7 @@ require_once( 'model/media.php' );
 
 function mediaPage() {
 
-  $search = isset( $_GET['titl'] ) ? $_GET['titl'] : null;
+  $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
   $medias = media::filterMedias( $search );
 
   require('view/mediaListView.php');
@@ -17,13 +17,15 @@ function mediaPage() {
 
 function filmPage() {
 
-    $medias = media::filmMedia();
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::filmMedia( $search );
     require('view/mediaListView.php');
 
 }
 
 function seriePage() {
 
-    $medias = media::serieMedia();
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::serieMedia( $search );
     require('view/mediaListView.php');
 }

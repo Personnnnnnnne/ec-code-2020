@@ -8,6 +8,7 @@ require_once( 'model/contactUs.php' );
 
 function contactUsPage (){
 
+
     require('view/contactUsView.php');
 
 }

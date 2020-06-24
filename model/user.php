@@ -35,13 +35,9 @@ class User {
 
   }
 
-  public function setPassword( $password, $password_confirm = false ) {
+  public function setPassword( $password ){
 
-    if( $password_confirm && $password != $password_confirm ):
-      throw new Exception( 'Vos mots de passes sont différents' );
-    endif;
-
-    $this->password = $password;
+    $this->password = password_hash($password, PASSWORD_BCRYPT);
   }
 
   /***************************
@@ -60,9 +56,6 @@ class User {
     return $this->password;
   }
 
-  public function getPasswordConfirm(){
-      return $this->password_confirm;
-  }
 
   /***********************************
   * -------- CREATE NEW USER ---------

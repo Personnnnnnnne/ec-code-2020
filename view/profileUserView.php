@@ -18,10 +18,20 @@
         <input type="email" name="email" value="" id="email" class="form-control" />
     </div>
 
+    <div>
+        <input type="submit" name="Valider" class="btn btn-block bg-red" />
+    </div>
+
     <div class="form-group">
         <label for="password">Nouveau mot de passe</label>
         <input type="password" name="password" id="password" class="form-control" />
     </div>
+
+    <div>
+        <input type="submit" name="Supprimer mon compte" class="btn btn-block bg-red" />
+    </div>
+
+    <br>
 
 <?php $content = ob_get_clean(); ?>
 

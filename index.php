@@ -5,6 +5,11 @@ require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once('controller/mediaController.php');
 require_once('controller/detailController.php');
+require_once('controller/profileUserController.php');
+require_once('controller/historyController.php');
+require_once('controller/contactUsController.php');
+
+
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -35,6 +40,46 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+      case 'profilepage':
+          profileUserPage();
+          break;
+
+      case 'changeemail':
+          changeEmailProfileUser();
+          break;
+
+      case 'changepassword':
+          changePasswordProfileUser();
+          break;
+
+      case 'deleteaccount':
+          deleteProfileUser();
+          break;
+
+      case 'contactus':
+          contactUsPage();
+          break;
+
+      case 'historydisplay':
+          historyPage();
+          break;
+
+      case 'historydelete':
+          deleteHistory();
+          break;
+
+      case 'historydeleteall':
+          deleteAllHistory();
+          break;
+
+      case 'filmpage':
+          filmPage();
+          break;
+
+      case'seriepage':
+          seriePage();
+          break;
+
   endswitch;
 
 else:
@@ -58,59 +103,3 @@ else:
   endif;
 endif;
 
-// Navigation on profile user
-if (isset ($_GET['mediatype'])) {
-
-    switch ($_GET['mediatype']) {
-
-        case 'filmpage':
-            filmPage();
-            break;
-
-        case 'seriepage':
-            seriePage();
-            break;
-
-    }
-}
-
-//Navigation on FilmsView or SeriesView
-if (isset ($_GET['profileuser'])) {
-
-    switch ($_GET['profileuser']) {
-
-        case 'profilePage':
-            profileUserPage($_GET['profileuser']);
-            break;
-
-        case 'changeemail':
-            changeEmailProfileUser();
-            break;
-
-        case 'changepassword':
-            changePasswordProfileUser();
-            break;
-
-        case 'deleteaccount':
-            deleteProfileUser();
-            break;
-    }
-}
-
-if (isset ($_GET['conatctus'])){
-    if($_GET['conatctus']){
-        contactUsPage();
-    }
-    else{
-        mediaPage();
-    }
-}
-
-if (isset ($_GET['history'])){
-    if ($_GET['history']){
-        historyPage();
-    }
-    else{
-        mediaPage();
-    }
-}
