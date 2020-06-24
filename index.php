@@ -4,10 +4,12 @@ require_once( 'controller/homeController.php' );
 require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once('controller/mediaController.php');
+require_once('controller/detailController.php');
 
 /**************************
 * ----- HANDLE ACTION -----
 ***************************/
+
 
 if ( isset( $_GET['action'] ) ):
 
@@ -37,6 +39,7 @@ if ( isset( $_GET['action'] ) ):
 
 else:
 
+
   $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
   if( $user_id ):
@@ -53,5 +56,22 @@ else:
   else:
     homePage();
   endif;
-
 endif;
+
+if (isset ($_GET['profileuser'])) {
+
+    switch ($_GET['profileuser']) {
+
+        case 'changeemail':
+            changeEmailProfileUser();
+            break;
+
+        case 'changepassword':
+            changePasswordProfileUser();
+            break;
+
+        case 'deleteaccount':
+            deleteProfileUser();
+            break;
+    }
+}

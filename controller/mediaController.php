@@ -9,19 +9,11 @@ require_once( 'model/media.php' );
 function mediaPage() {
 
   $search = isset( $_GET['titl'] ) ? $_GET['titl'] : null;
-  $medias = Media::filterMedias( $search );
+  $medias = media::filterMedias( $search );
 
   require('view/mediaListView.php');
 
 }
 
-function detailPage( $id ){
-
-    $medias = Media::filmMedia( $id );
-    require('view/mediaListView.php');
-
-
-
-}
 
 

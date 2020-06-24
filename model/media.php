@@ -2,7 +2,7 @@
 
 require_once( 'database.php' );
 
-class Media {
+class media {
 
   protected $id;
   protected $genre_id;
@@ -109,8 +109,8 @@ class Media {
   public static function filmMedia( $title){
       $db   =init_db();
 
-      $req  =   $db->prepare("SELECT * FROM media WHERE type=? AND id=? ORDER BY release_date DESC");
-      $req->execute(array("Film", $title));
+      $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Film' ORDER BY release_date DESC");
+      $req->execute(array('Film', $title));
 
       $db   = null;
 
@@ -121,7 +121,7 @@ class Media {
         $db   =init_db();
 
         $req  =   $db->prepare("SELECT * FROM media WHERE type = 'Série' ORDER BY release_date DESC");
-        $req->execute( array('%'. $title .'%'));
+        $req->execute( array('Série', $title));
 
         $db   = null;
 
