@@ -2,10 +2,9 @@
 
 require_once( 'database.php' );
 
-class history
+class contactUs
 {
 
-
-    //Gestion de l'historique
+    //ENVOYER UN EMAIL
 
 }

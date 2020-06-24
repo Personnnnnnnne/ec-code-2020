@@ -15,5 +15,15 @@ function mediaPage() {
 
 }
 
+function filmPage() {
 
+    $medias = media::filmMedia();
+    require('view/mediaListView.php');
 
+}
+
+function seriePage() {
+
+    $medias = media::serieMedia();
+    require('view/mediaListView.php');
+}

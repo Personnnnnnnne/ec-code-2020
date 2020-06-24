@@ -8,6 +8,8 @@ require_once( 'model/profileUser.php' );
 
 function profileUserPage (){
 
+    require('view/profileUserView.php');
+
 }
 
 function changePasswordProfileUser(){

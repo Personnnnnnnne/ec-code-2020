@@ -58,9 +58,30 @@ else:
   endif;
 endif;
 
+// Navigation on profile user
+if (isset ($_GET['mediatype'])) {
+
+    switch ($_GET['mediatype']) {
+
+        case 'filmpage':
+            filmPage();
+            break;
+
+        case 'seriepage':
+            seriePage();
+            break;
+
+    }
+}
+
+//Navigation on FilmsView or SeriesView
 if (isset ($_GET['profileuser'])) {
 
     switch ($_GET['profileuser']) {
+
+        case 'profilePage':
+            profileUserPage($_GET['profileuser']);
+            break;
 
         case 'changeemail':
             changeEmailProfileUser();
@@ -73,5 +94,23 @@ if (isset ($_GET['profileuser'])) {
         case 'deleteaccount':
             deleteProfileUser();
             break;
+    }
+}
+
+if (isset ($_GET['conatctus'])){
+    if($_GET['conatctus']){
+        contactUsPage();
+    }
+    else{
+        mediaPage();
+    }
+}
+
+if (isset ($_GET['history'])){
+    if ($_GET['history']){
+        historyPage();
+    }
+    else{
+        mediaPage();
     }
 }

@@ -14,12 +14,12 @@
 </div>
 
     <div class="form-group">
-        <label for="email">Adresse email</label>
+        <label for="email">Nouvelle adresse email</label>
         <input type="email" name="email" value="" id="email" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label for="password">Mot de passe</label>
+        <label for="password">Nouveau mot de passe</label>
         <input type="password" name="password" id="password" class="form-control" />
     </div>
 

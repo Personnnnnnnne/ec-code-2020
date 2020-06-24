@@ -97,7 +97,7 @@ class media {
     $db   = init_db();
 
     $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
-    $req->execute( array( '%' . $title . '%' ));
+    $req->execute( array($title));
 
     // Close databse connection
     $db   = null;
