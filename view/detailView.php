@@ -25,6 +25,10 @@
             <div class="title"><?= $media['title']; ?></div>
             <div class="title"><?= $media['summary']; ?></div>
             <div class="title"><?= $media['trailer_url']; ?></div>
+            <div class="title"><?php
+                $duration = gmdate("H:i", $media['duration']);
+                echo str_replace(":", "h", $duration); ?>
+            </div>
 
         </a>
     <?php endforeach; ?>
