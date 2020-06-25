@@ -30,8 +30,14 @@
                             src="<?= $media['trailer_url']; ?>" ></iframe>
                 </div>
             </div>
-            <div class="title"><?= $media['title']; ?></div>
+                <div class="title">
+                    <?= $media['title']; ?>
+                </div>
+                <?php if ($media['type'] == 'Série'):?>
+                    <div class="title"><?= $media['type']; ?></div>
+                <?php endif; ?>
         </a>
+
     <?php endforeach; ?>
 </div>
 
