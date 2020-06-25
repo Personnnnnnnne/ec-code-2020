@@ -15,6 +15,8 @@ require_once('controller/contactUsController.php');
 * ----- HANDLE ACTION -----
 ***************************/
 
+//Navigation all screen with action in href after index.php?
+
 
 if ( isset( $_GET['action'] ) ):
 
@@ -96,6 +98,8 @@ if ( isset( $_GET['action'] ) ):
 
 else:
 
+//Navigation if user is connected go to detail page, go to detail page in href after index.php?
+//If user is not connect force to go in home page
 
   $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 

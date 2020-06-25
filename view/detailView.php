@@ -39,6 +39,10 @@
             <?php foreach ($number_episodes as $episode): ?>
                 <?php if ($episode['saison_number'] == $saison['saison_number']):?>
                     <a class="item" href="<?= $episode['url']; ?>">
+                        <div>
+                            <iframe allowfullscreen==true frameborder="0"
+                                    src="<?= $episode['url']; ?>" ></iframe>
+                        </div>
 
                         <div class="title"> <?= $episode['title'];?></div>
                         <div class="title"><?php

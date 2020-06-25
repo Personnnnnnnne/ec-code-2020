@@ -33,7 +33,7 @@
     </div>
 
 <div>
-    <h3 class="profile"><a href="index.php?action=historydeleteall">Supprimer touts l'historique</a></h3>
+    <h3 class="profile"><a href="index.php?action=historydeleteall">Supprimer tout l'historique</a></h3>
 </div>
 
 <?php $content = ob_get_clean(); ?>

@@ -50,11 +50,15 @@ class profileUser
      **************************/
 
     public static function changePassword($password){
-
+        //Open database connection
         $db   =init_db();
 
-        $req  =   $db->prepare("UPDATE user SET 'password'=$password WHERE 'id'=?");
+        //Request to change password account
+        $req  =   $db->prepare("UPDATE user SET 'password'=$password WHERE id=?");
         $req->execute( array('password'  => $password));
+
+        //Close database connection
+        $db = null;
 
     }
 
@@ -63,12 +67,15 @@ class profileUser
      ***************************/
 
     public static function changeEmail($email){
-
+        //Open database
         $db   =init_db();
 
+        //request to change email account
         $req  =   $db->prepare("UPDATE 'user' SET 'email'= $email WHERE 'user'.'id'=?");
         $req->execute( array( $email->getEmail() ) );
 
+        //Close database connection
+        $db = null;
     }
 
     /***************************
@@ -76,12 +83,14 @@ class profileUser
      ***************************/
 
     public static function deleteAccount($id){
-
+        //Open database connection
         $db   =init_db();
 
+        //request to delete account
         $req  =   $db->prepare("DELETE FROM 'user' WHERE 'user'.'id'=?");
         $req->execute();
 
+        //Close database connection
         $db = null;
 
     }

@@ -13,6 +13,7 @@ class history
         // Open database connection
         $db   = init_db();
 
+        //request to display history but not by userid
         $req  = $db->prepare( "SELECT * FROM history" );
         $req->execute(array());
 
@@ -28,6 +29,7 @@ class history
         // Open database connection
         $db   = init_db();
 
+        //request to delete one item in hisotry
         $req  = $db->prepare( "DELETE FROM history WHERE id=?" );
         $req->execute( array());
 
@@ -43,6 +45,7 @@ class history
         // Open database connection
         $db   = init_db();
 
+        //request to delete all history
         $req  = $db->prepare( "DELETE FROM history");
         $req->execute( array());
 

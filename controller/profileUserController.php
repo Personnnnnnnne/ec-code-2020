@@ -14,18 +14,21 @@ function profileUserPage (){
 
 function changePasswordProfileUser(){
 
+    //Execute function changePassword
     profileUser::changePassword();
     require('view/profileUserView.php');
 }
 
 function changeEmailProfileUser(){
 
+    //Execute function changeEmail
     profileUser::changeEmail();
     require('view/profileUserView.php');
 }
 
 function deleteProfileUser(){
 
+    //Execute function daleteProfileUser
     profileUser::deleteAccount();
     $_SESSION = array();
     session_destroy();
