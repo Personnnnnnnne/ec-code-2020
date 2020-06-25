@@ -37,6 +37,7 @@ class User {
 
   public function setPassword( $password ){
 
+      //Password is encrypted in Bcrypt
     $this->password = password_hash($password, PASSWORD_BCRYPT);
   }
 
