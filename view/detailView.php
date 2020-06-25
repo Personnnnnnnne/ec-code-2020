@@ -14,7 +14,7 @@
 </div>
 
 <div class="media-list">
-    <?php foreach( $medias as $media ): ?>
+    <?php foreach( $medias as $media): ?>
         <a class="item" href="index.php?media=<?= $media['id']; ?>">
             <div class="video">
                 <div>
@@ -32,7 +32,32 @@
 
         </a>
     <?php endforeach; ?>
-</div>
+
+    <div class="media-list">
+        <?php foreach ($number_saisons as $saison): ?>
+        <h2>Saison <?php print_r($saison['saison_number'])?></h2>
+            <?php foreach ($number_episodes as $episode): ?>
+                <?php if ($episode['saison_number'] == $saison['saison_number']):?>
+                    <a class="item" href="<?= $episode['url']; ?>">
+
+                        <div class="title"> <?= $episode['title'];?></div>
+                        <div class="title"><?php
+                            $duration = gmdate("H:i", $episode['duration']);
+                            echo str_replace(":", "h", $duration); ?>
+                        </div>
+                        <div class="title"> <?= $episode['summary'];?></div>
+                        <div class="title"> Lancer la lecture</div>
+
+
+                    </a>
+                <?php endif;?>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
+
+
+
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('dashboard.php'); ?>
