@@ -22,10 +22,17 @@
                             src="<?= $media['trailer_url']; ?>" ></iframe>
                 </div>
             </div>
-            <div class="title"><?= $media['title']; ?></div>
-            <div class="title"><?= $media['summary']; ?></div>
-            <div class="title"><?= $media['trailer_url']; ?></div>
-            <div class="title"><?php
+            <div class="title">
+                <?= $media['title']; ?>
+            </div>
+            <div class="title">
+                <?= $media['summary']; ?>
+            </div>
+            <div class="title">
+                <?= $media['trailer_url']; ?>
+            </div>
+            <div class="title">
+                <?php
                 $duration = gmdate("H:i", $media['duration']);
                 echo str_replace(":", "h", $duration); ?>
             </div>
@@ -43,16 +50,19 @@
                             <iframe allowfullscreen==true frameborder="0"
                                     src="<?= $episode['url']; ?>" ></iframe>
                         </div>
-
-                        <div class="title"> <?= $episode['title'];?></div>
+                        <div class="title">
+                            <?= $episode['title'];?>
+                        </div>
                         <div class="title"><?php
                             $duration = gmdate("H:i", $episode['duration']);
                             echo str_replace(":", "h", $duration); ?>
                         </div>
-                        <div class="title"> <?= $episode['summary'];?></div>
-                        <div class="title"> Lancer la lecture</div>
-
-
+                        <div class="title">
+                            <?= $episode['summary'];?>
+                        </div>
+                        <div class="title">
+                            Lancer la lecture
+                        </div>
                     </a>
                 <?php endif;?>
             <?php endforeach; ?>

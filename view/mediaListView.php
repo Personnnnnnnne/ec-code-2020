@@ -34,7 +34,9 @@
                     <?= $media['title']; ?>
                 </div>
                 <?php if ($media['type'] == 'Série'):?>
-                    <div class="title"><?= $media['type']; ?></div>
+                    <div class="title">
+                        <?= $media['type']; ?>
+                    </div>
                 <?php endif; ?>
         </a>
 
